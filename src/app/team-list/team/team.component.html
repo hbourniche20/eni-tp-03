@@ -21,6 +21,7 @@
   <tr>
     <app-member-list
       [memberList]="team.memberList"
+      [dragList]="availableMembers"
       (deleteMember)="onDeleteMemberFromTeam($event)"
     ></app-member-list>
   </tr>

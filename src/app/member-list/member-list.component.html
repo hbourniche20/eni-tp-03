@@ -8,8 +8,8 @@
       <th>Action</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let member of memberList">
+  <tbody cdkDropList [cdkDropListData]="dragList" (cdkDropListDropped)="dropped($event)" (drop)="dropped($event)">
+    <tr *ngFor="let member of memberList" (cdkDragStarted)="startDrag(member)" cdkDrag>
       <td>{{member.name}}</td>
       <td>{{member.surname}}</td>
       <td>

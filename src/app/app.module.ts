@@ -8,6 +8,7 @@ import { TeamComponent } from './team-list/team/team.component';
 import { MemberListComponent } from './member-list/member-list.component';
 import { CreateMemberComponent } from './create-personne/create-member.component';
 import {DataService} from "./DataService";
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [
@@ -17,10 +18,11 @@ import {DataService} from "./DataService";
     MemberListComponent,
     CreateMemberComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    DragDropModule
+  ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

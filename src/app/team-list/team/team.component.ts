@@ -1,5 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Team} from "../Team";
+import {DataService} from "../../DataService";
+import {Member} from "../../member-list/Member";
 
 @Component({
   selector: 'app-team',
@@ -12,10 +14,12 @@ export class TeamComponent implements OnInit {
 
   @Output() delete = new EventEmitter<number>();
 
-  constructor() {
+  availableMembers: Member[] = [];
+  constructor(private dataService: DataService) {
   }
 
   ngOnInit(): void {
+    this.availableMembers = this.dataService.memberList;
   }
 
   onDeleteMemberFromTeam(memberId: number) {

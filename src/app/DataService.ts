@@ -7,6 +7,8 @@ export class DataService {
   public teamList: Team[];
   public memberList: Member[];
 
+  public draggedMember: Member = new Member();
+
   constructor() {
     this.id = Utils.generateId();
     this.teamList = [];
@@ -86,6 +88,7 @@ export class DataService {
       this.memberList.splice(position,1);
     }
   }
+
   public findMemberByNames(surname: string, name: string) {
     for (let i=0; i < this.memberList.length; i++) {
       const member = this.memberList[i];
