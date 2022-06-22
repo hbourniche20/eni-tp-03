@@ -58,7 +58,7 @@ export class Entreprise {
   }
 
   public findPersonneByNames(nom: string, prenom: string) {
-    for (let i=0; i < this.equipes.length; i++) {
+    for (let i=0; i < this.personnes.length; i++) {
       const p = this.personnes[i];
       if (p.nom === nom && p.prenom === prenom) {
         return p;
@@ -84,13 +84,6 @@ export class Entreprise {
         equipe.retirerMembre(personneId);
       });
       this.personnes.splice(position,1);
-    }
-  }
-
-  public deletePersonneEquipe(personneId: number, equipeId: number) {
-    const equipe = this.findEquipe(equipeId);
-    if (equipe != null) {
-      equipe.retirerMembre(personneId);
     }
   }
 

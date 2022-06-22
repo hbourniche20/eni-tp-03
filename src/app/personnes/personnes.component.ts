@@ -10,6 +10,7 @@ export class PersonnesComponent implements OnInit {
 
   @Input() personneList: Personne[] = [];
   @Output() supprimerPersonne = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit(): void {
