@@ -2,15 +2,15 @@
   <div class="row">
     <div class="col-4">
       <input
-        #nomEquipe
+        [(ngModel)]="equipeName"
         aria-label="Equipe"
         class="form-control"
         placeholder="Equipe"
-        (keydown.enter)="ajouterEquipe(nomEquipe)"
+        (keydown.enter)="ajouterEquipe()"
       />
     </div>
     <div class="col-1">
-      <button class="btn btn-success" (click)="ajouterEquipe(nomEquipe)">
+      <button class="btn btn-success" (click)="ajouterEquipe()">
         <i class="fa fa-plus"></i>
       </button>
     </div>

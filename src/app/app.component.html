@@ -8,25 +8,25 @@
     <div class="bg-gris p-4">
       <div class="mb-3">
         <input
-          #prenom
+          [(ngModel)]="personnePrenom"
           class="form-control"
           aria-label="Prénom"
           placeholder="Prénom"
-          (keyup.enter)="ajouterPersonne(nom, prenom, equipe)"
+          (keyup.enter)="ajouterPersonne()"
         />
       </div>
       <div class="mb-3">
         <input
-          #nom
+          [(ngModel)]="personneNom"
           class="form-control"
           aria-label="prenom"
           placeholder="Nom"
-          (keyup.enter)="ajouterPersonne(nom, prenom, equipe)"
+          (keyup.enter)="ajouterPersonne()"
         />
       </div>
       <div class="mb-3">
         <select
-          #equipe
+          [(ngModel)]="equipeSelected"
           aria-label="Equipe"
           class="form-select"
         >
@@ -38,7 +38,7 @@
       </div>
       <button
         class="btn btn-success btn-lg col-12"
-        (click)="ajouterPersonne(nom, prenom, equipe)">
+        (click)="ajouterPersonne()">
         <i class="fa fa-plus"></i>
       </button>
     </div>

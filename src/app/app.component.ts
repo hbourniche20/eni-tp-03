@@ -11,11 +11,15 @@ export class AppComponent {
 
   entreprise = new Entreprise("Cosling");
 
-  ajouterPersonne(nomInput: any, prenomInput: any, equipeSelector: any) {
-    this.entreprise.addMemberToTeam(nomInput.value, prenomInput.value, parseInt(equipeSelector.value));
-    nomInput.value = "";
-    prenomInput.value = "";
-    equipeSelector.value = "-1";
+  personneNom = "";
+  personnePrenom = "";
+  equipeSelected = "-1";
+
+  ajouterPersonne() {
+    this.entreprise.addMemberToTeam(this.personneNom, this.personnePrenom, parseInt(this.equipeSelected));
+    this.personneNom = "";
+    this.personnePrenom= "";
+    this.equipeSelected = "-1";
   }
 
   enleverPersonne(id: number) {

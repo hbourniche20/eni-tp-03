@@ -11,6 +11,8 @@ export class EquipesComponent implements OnInit {
 
   @Input() entreprise: Entreprise;
 
+  equipeName = "";
+
   constructor() {
     this.entreprise = new Entreprise();
   }
@@ -18,10 +20,10 @@ export class EquipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public ajouterEquipe(input: any) {
-    const e = new Equipe(input.value);
+  public ajouterEquipe() {
+    const e = new Equipe(this.equipeName);
     this.entreprise.addEquipe(e);
-    input.value = "";
+    this.equipeName = "";
   }
 
   public enleverEquipe(id: number) {
