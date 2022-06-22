@@ -6,13 +6,15 @@ import {FormsModule} from "@angular/forms";
 import { EquipesComponent } from './equipes/equipes.component';
 import { EquipeComponent } from './equipes/equipe/equipe.component';
 import { PersonnesComponent } from './personnes/personnes.component';
+import { CreatePersonneComponent } from './create-personne/create-personne.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EquipesComponent,
     EquipeComponent,
-    PersonnesComponent
+    PersonnesComponent,
+    CreatePersonneComponent
   ],
     imports: [
         BrowserModule,
