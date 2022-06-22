@@ -18,9 +18,10 @@ export class EquipesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public ajouterEquipe(nom: string) {
-    const e = new Equipe(nom);
+  public ajouterEquipe(input: any) {
+    const e = new Equipe(input.value);
     this.entreprise.addEquipe(e);
+    input.value = "";
   }
 
   public enleverEquipe(id: number) {

@@ -11,8 +11,11 @@ export class AppComponent {
 
   entreprise = new Entreprise("Cosling");
 
-  ajouterPersonne(nom: string, prenom: string, equipeId: string) {
-    this.entreprise.addMemberToTeam(nom, prenom, parseInt(equipeId));
+  ajouterPersonne(nomInput: any, prenomInput: any, equipeSelector: any) {
+    this.entreprise.addMemberToTeam(nomInput.value, prenomInput.value, parseInt(equipeSelector.value));
+    nomInput.value = "";
+    prenomInput.value = "";
+    equipeSelector.value = "-1";
   }
 
   enleverPersonne(id: number) {

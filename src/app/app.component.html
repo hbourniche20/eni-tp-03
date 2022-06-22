@@ -12,6 +12,7 @@
           class="form-control"
           aria-label="Prénom"
           placeholder="Prénom"
+          (keyup.enter)="ajouterPersonne(nom, prenom, equipe)"
         />
       </div>
       <div class="mb-3">
@@ -20,6 +21,7 @@
           class="form-control"
           aria-label="prenom"
           placeholder="Nom"
+          (keyup.enter)="ajouterPersonne(nom, prenom, equipe)"
         />
       </div>
       <div class="mb-3">
@@ -36,8 +38,7 @@
       </div>
       <button
         class="btn btn-success btn-lg col-12"
-        (click)="ajouterPersonne(nom.value, prenom.value, equipe.value)"
-      >
+        (click)="ajouterPersonne(nom, prenom, equipe)">
         <i class="fa fa-plus"></i>
       </button>
     </div>
