@@ -2,21 +2,19 @@
 <div class="container pt-4" id="team">
   <div class="row">
     <div class="col-md-8">
-      <app-equipes [entreprise]="entreprise"></app-equipes>
+      <app-team-list></app-team-list>
     </div>
   <div class="col-md-4">
     <div class="bg-gris p-4">
-      <app-create-personne
-        [entreprise]="entreprise"
-      ></app-create-personne>
+      <app-create-member></app-create-member>
     </div>
     <!-- divUser -->
 
-    <div class="mt-3 pt-2" *ngIf="entreprise.personnes.length >0">
-      <app-personnes
-        [personneList]="entreprise.personnes"
-        (supprimerPersonne)="enleverPersonne($event)"
-      ></app-personnes>
+    <div class="mt-3 pt-2" *ngIf="memberList.length >0">
+      <app-member-list
+        [memberList]="memberList"
+        (deleteMember)="onDeleteMember($event)"
+      ></app-member-list>
     </div>
   </div>
   <!-- col4 -->

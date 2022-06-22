@@ -2,19 +2,19 @@
   class="table table-striped mt-4"
 >
   <thead>
-    <tr *ngIf="personneList.length > 0">
+    <tr *ngIf="memberList.length > 0">
       <th>Prénom</th>
       <th>Nom</th>
       <th>Action</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let personne of personneList">
-      <td>{{personne.prenom}}</td>
-      <td>{{personne.nom}}</td>
+    <tr *ngFor="let member of memberList">
+      <td>{{member.name}}</td>
+      <td>{{member.surname}}</td>
       <td>
         <button
-          (click)="supprimerPersonne.emit(personne.id)"
+          (click)="deleteMember.emit(member.id)"
           class="btn btn-danger"
         >
           <i class="fa fa-trash"></i>

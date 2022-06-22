@@ -1,35 +1,35 @@
 <div class="mb-3">
   <input
-    [(ngModel)]="personnePrenom"
+    [(ngModel)]="memberName"
     class="form-control"
     aria-label="Prénom"
     placeholder="Prénom"
-    (keyup.enter)="ajouterPersonne()"
+    (keyup.enter)="createMember()"
   />
 </div>
 <div class="mb-3">
   <input
-    [(ngModel)]="personneNom"
+    [(ngModel)]="memberSurname"
     class="form-control"
     aria-label="prenom"
     placeholder="Nom"
-    (keyup.enter)="ajouterPersonne()"
+    (keyup.enter)="createMember()"
   />
 </div>
 <div class="mb-3">
   <select
-    [(ngModel)]="equipeSelected"
+    [(ngModel)]="teamSelected"
     aria-label="Equipe"
     class="form-select"
   >
     <option value="-1">Pas d'équipe</option>
-    <option *ngFor="let equipe of entreprise.equipes" [value]="equipe.id">
-      {{equipe.nom}}
+    <option *ngFor="let equipe of teamList" [value]="equipe.id">
+      {{equipe.name}}
     </option>
   </select>
 </div>
 <button
   class="btn btn-success btn-lg col-12"
-  (click)="ajouterPersonne()">
+  (click)="createMember()">
   <i class="fa fa-plus"></i>
 </button>

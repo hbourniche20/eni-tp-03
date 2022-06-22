@@ -7,21 +7,21 @@
         <div class="col-1">
           <button
             class="btn btn-danger"
-            (click)="supprimer.emit(equipe.id)"
+            (click)="delete.emit(team.id)"
           >
             <i class="fa fa-trash "></i>
           </button>
         </div>
         <div class="col-9">
-          <h3>{{equipe.nom}}</h3>
+          <h3>{{team.name}}</h3>
         </div>
       </div>
     </td>
   </tr>
   <tr>
-    <app-personnes
-      [personneList]="equipe.membres"
-      (supprimerPersonne)="enleverPersonneEquipe($event)"
-    ></app-personnes>
+    <app-member-list
+      [memberList]="team.memberList"
+      (deleteMember)="onDeleteMemberFromTeam($event)"
+    ></app-member-list>
   </tr>
 </table>
