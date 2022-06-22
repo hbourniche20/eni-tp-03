@@ -1,0 +1,25 @@
+<table
+  class="table table-striped mt-4"
+>
+  <thead>
+    <tr *ngIf="personneList.length > 0">
+      <th>Prénom</th>
+      <th>Nom</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let personne of personneList">
+      <td>{{personne.prenom}}</td>
+      <td>{{personne.nom}}</td>
+      <td>
+        <button
+          (click)="supprimerPersonne.emit(personne.id)"
+          class="btn btn-danger"
+        >
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

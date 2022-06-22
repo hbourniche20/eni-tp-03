@@ -1,0 +1,25 @@
+<div class="bg-gris p-4">
+  <div class="row">
+    <div class="col-4">
+      <input
+        #nomEquipe
+        aria-label="Equipe"
+        class="form-control"
+        placeholder="Equipe"
+        (keydown.enter)="ajouterEquipe(nomEquipe.value)"
+      />
+    </div>
+    <div class="col-1">
+      <button class="btn btn-success" (click)="ajouterEquipe(nomEquipe.value)">
+        <i class="fa fa-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+<div   *ngFor="let equipe of entreprise.equipes">
+    <app-equipe
+      style="width: 100%"
+      [equipe]="equipe"
+      (supprimer)="enleverEquipe($event)"
+    ></app-equipe>
+</div>
