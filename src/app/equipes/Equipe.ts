@@ -1,12 +1,12 @@
-import {Personne} from "./Personne";
-import {Utils} from "./Utils";
+import {Personne} from "../personnes/Personne";
+import {Utils} from "../Utils";
 
 export class Equipe {
   public id: number;
   public nom: string;
   public membres: Personne[];
 
-  constructor(nom: string) {
+  constructor(nom: string = "") {
     this.id = Utils.generateId();
     this.nom = nom;
     this.membres = [];
